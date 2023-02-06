@@ -51,48 +51,28 @@ int main (int argc, char *argv[])
 	  else
 	    {
 	      wait(0);
-	    }
-
-
-	}
-      
-
-    }
-    printf("\n");
-    
-
-
-
-
-
-  if (pid1 < 0)
-    {
+        if (pid1 < 0)
+        {
       fprintf (stderr, "Fork Failed\n");
       return 1;
-    }
+        }
 
-  else if (pid1 == 0)
-    {
-      printf (" From Child2 n=%d, ", num);
-      while (num > 1)
-	{
-	  if (num % 2 == 1)
-	    {
-	      num = num * 3 + 1;
-	      printf ("From Child2 n=%d, ", num);
-	    }
-	  else
-	    {
-	      sleep(1);
-	      wait(0);
-	    }
-
-	}
-      
-
-
-
-
-    }
- 
+      else if (pid1 == 0)
+        {
+          printf (" From Child2 n=%d, ", num);
+	            if (num % 2 == 1)
+	              {
+	                num = num * 3 + 1;
+	                printf ("From Child2 n=%d, ", num);
+	              }
+	            else
+	              {
+	                sleep(1);
+	                wait(0);
+	              }
+        }
+        
+      }
+  }
+}
 }
